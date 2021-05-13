@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ControlPanel_Page.aspx.cs" Inherits="EmployeTrackingSystem.ControlPanel_Page" %>
 
+<%@ Register assembly="DevExpress.Web.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,7 +46,7 @@
         <div class="col-8">
           <span>Last Scanned Id : </span>
 
-          <span class="lastScannedId">1239193</span>
+            <asp:Label ID="lastscannedid" runat="server"></asp:Label>
           <br />
           <span>Last Scanned Name :</span>
           <span class="lastScannedName">Mehmet</span>
@@ -59,26 +61,18 @@
             >Management Panel</a
           >
         </div>
+    <form id="dataform" runat="server">
         <div class="col-12">
-          <table id="table_id" class="display">
-            <thead>
-              <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Row 1 Data 1</td>
-                <td>Row 1 Data 2</td>
-              </tr>
-              <tr>
-                <td>Row 2 Data 1</td>
-                <td>Row 2 Data 2</td>
-              </tr>
-            </tbody>
-          </table>
+          <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="false">  
+                <Columns>
+                    <asp:BoundField DataField="empID" HeaderText ="Employee id" />
+                    <asp:BoundField DataField="empName" HeaderText ="Employee name" />
+                    <asp:BoundField DataField="empSurname" HeaderText ="Employee surname" />
+                    <asp:BoundField DataField="CardID" HeaderText ="Card id" />
+                </Columns>
+              </asp:GridView>
         </div>
+        </form>
       </div>
     </div>
     <div class="container-fluid" style="width: 40%">
