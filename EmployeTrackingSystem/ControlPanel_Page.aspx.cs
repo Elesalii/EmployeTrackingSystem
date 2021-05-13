@@ -15,7 +15,7 @@ namespace EmployeTrackingSystem
         protected void Page_Load(object sender, EventArgs e)
         {
             conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("Select * from employees", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM employees", conn);
             DataTable mydatatable = new DataTable();
             da.Fill(mydatatable);
             gvEmployees.DataSource = mydatatable;
@@ -26,7 +26,7 @@ namespace EmployeTrackingSystem
         protected void lastscanned()
         {
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM logs WHERE scannedid=(SELECT max(scannedid) FROM logs);", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM logs ORDER BY id DESC LIMIT 1;", conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
             lastscannedid.Text = dr["scannedid"].ToString();

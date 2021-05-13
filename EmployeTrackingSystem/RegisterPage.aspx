@@ -19,32 +19,33 @@
   </head>
 
   <body>
-    <form>
+    <form runat="server">
       <button type="submit" class="btn btn-lg btn-success">Listen Port</button>
+        <asp:Label ID="LabelMasterAutho" runat="server"></asp:Label>
       <br />
 
       <div class="form-group">
         <label for="inputId">Id</label>
-        <input class="form-control" id="inputId" />
+          <asp:TextBox ID="textboxID" class="form-control" runat="server"></asp:TextBox>
       </div>
       <div class="form-group">
-        <label for="inputPatronId">PatronId</label>
-        <input class="form-control" id="inputPatronId" />
+        <label for="inputPatronId">Patron Id</label>
+        <asp:TextBox ID="textboxPatronID" class="form-control" runat="server"></asp:TextBox>
       </div>
       <div class="form-group">
         <label for="inputCardId">CardId</label>
-        <input class="form-control" id="inputCardId" />
+        <asp:TextBox ID="textboxCardID" class="form-control" runat="server"></asp:TextBox>
       </div>
       <div class="form-group">
-        <label for="inputUsername">Username address</label>
-        <input type="email" class="form-control" id="inputUsername" />
+        <label for="inputUsername">Username</label>
+        <asp:TextBox ID="textboxUsername" class="form-control" runat="server"></asp:TextBox>
       </div>
       <div class="form-group">
         <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" />
+        <asp:TextBox ID="textboxPassword" class="form-control" runat="server"></asp:TextBox>
       </div>
 
-      <button type="submit" class="btn btn-primary">Register</button>
+        <asp:Button ID="btn_register2" class="btn btn-primary" runat="server" Text="Register" OnClick="btn_register2_Click" />
     </form>
   </body>
 </html>
