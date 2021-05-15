@@ -43,14 +43,15 @@
           <button class="btn btn-primary">Start Scanning Process</button>
           <button class="btn btn-danger">Stop Scanning Process</button>
         </div>
-        <div class="col-8">
-          <span>Last Scanned Id : </span>
-
-            <asp:Label ID="lastscannedid" runat="server"></asp:Label>
-          <br />
-          <span>Last Scanned Name :</span>
-          <span class="lastScannedName">Mehmet</span>
-        </div>
+                 <form id="employeedata" runat="server">
+                <div class="col-8">
+                  <span>Last Scanned Id : </span>
+                    <asp:TextBox ID="textboxlastscannedid" runat="server"></asp:TextBox>
+                  <br />
+                  <span>Last Scanned Name :</span>
+                  <asp:TextBox ID="textbox_empname" runat="server"></asp:TextBox>
+                  <br />
+                </div>
         <div class="col-4 text-center">
           <span>Current Status</span>
           <br />
@@ -61,7 +62,8 @@
             >Management Panel</a
           >
         </div>
-    <form id="dataform" runat="server">
+        
+    
         <div class="col-12">
           <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="false">  
                 <Columns>
@@ -72,7 +74,8 @@
                 </Columns>
               </asp:GridView>
         </div>
-        </form>
+        
+             </form>
       </div>
     </div>
     <div class="container-fluid" style="width: 40%">

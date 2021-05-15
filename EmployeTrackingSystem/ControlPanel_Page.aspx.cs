@@ -21,17 +21,42 @@ namespace EmployeTrackingSystem
             gvEmployees.DataSource = mydatatable;
             gvEmployees.DataBind();
             conn.Close();
-            lastscanned();
+            Lastscanned();
+            LastScannedName();
         }
-        protected void lastscanned()
+        protected void Lastscanned()
         {
             conn.Open();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM logs ORDER BY id DESC LIMIT 1;", conn);
             MySqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            lastscannedid.Text = dr["scannedid"].ToString();
+            textboxlastscannedid.Text = dr["scannedid"].ToString();
             dr.Close();
             conn.Close();
+        }
+        protected void LastScannedName()
+        {
+            try
+            {
+                if (textboxlastscannedid.Text != null)
+                {
+                    conn.Open();
+                    MySqlCommand cmd_empname = new MySqlCommand("SELECT empName FROM employees where CardID ='" + textboxlastscannedid.Text + "'", conn);
+                    MySqlDataReader dr_empname = cmd_empname.ExecuteReader();
+                    dr_empname.Read();
+                    textbox_empname.Text = dr_empname["empName"].ToString();
+                    dr_empname.Close();
+                    conn.Close();
+                }
+                else
+                {
+                    Response.Write("<script>alert('No card scan detected')</script>");
+                }
+            }
+            catch
+            {
+                Response.Write("<script>alert('Card ID did not match')</script>");
+            }
         }
     }
 }

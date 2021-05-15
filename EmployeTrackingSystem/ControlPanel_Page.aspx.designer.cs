@@ -13,22 +13,31 @@ namespace EmployeTrackingSystem {
     public partial class ControlPanel_Page {
         
         /// <summary>
-        /// lastscannedid denetimi.
+        /// employeedata denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lastscannedid;
+        protected global::System.Web.UI.HtmlControls.HtmlForm employeedata;
         
         /// <summary>
-        /// dataform denetimi.
+        /// textboxlastscannedid denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm dataform;
+        protected global::System.Web.UI.WebControls.TextBox textboxlastscannedid;
+        
+        /// <summary>
+        /// textbox_empname denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textbox_empname;
         
         /// <summary>
         /// gvEmployees denetimi.
