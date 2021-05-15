@@ -14,10 +14,10 @@ namespace EmployeTrackingSystem
         MySqlConnection conn = new MySqlConnection(@"server=127.0.0.1;user id=alieles;database=ets; password=mymind3278.");
         public void patronRegister()
         {
-            if(LabelMasterAutho.Text == "550")
+            if(LabelMasterAutho.Text == "212")
             {
                 conn.Open();
-                string addquery = "INSERT INTO patron VALUES('"+textboxPatronID.Text.ToString() +"', '"+textboxCardID.Text.ToString() + "', '"+textboxUsername.Text.ToString() +"', '"+textboxPassword.Text.ToString()+"')";
+                string addquery = "INSERT INTO patron VALUES('"+textboxPatronID.Text.ToString() +"', '"+textboxCardID.Text.ToString() + "', '"+textboxUsername.Text.ToString() +"', '"+textboxPassword.Text.ToString()+"','"+textboxEmail.Text+"')";
                 MySqlCommand addcommand = new MySqlCommand(addquery, conn);
                 addcommand.ExecuteNonQuery();
                 Response.Write("<script>alert('Inserted Successfully')</script>");
@@ -25,7 +25,7 @@ namespace EmployeTrackingSystem
             }
             else
             {
-                
+                Response.Write("<script>alert('MasterCard Authorazition FAILED!')</script>");
             }
 
 

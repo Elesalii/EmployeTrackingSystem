@@ -46,5 +46,10 @@ namespace EmployeTrackingSystem
         {
             Response.Redirect("RegisterPage.aspx");
         }
+
+        protected void btn_to_recovery_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgotPassword_Page.aspx");
+        }
     }
 }

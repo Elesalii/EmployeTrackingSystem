@@ -150,6 +150,7 @@
     <Content Include="ali\bootstrap.min.css" />
     <Content Include="ali\contral_panel.html" />
     <Content Include="ali\ETS.PNG" />
+    <Content Include="ali\forgotPW.css" />
     <Content Include="ali\index.html" />
     <Content Include="ali\management_panel.html" />
     <Content Include="ali\register.html" />
@@ -172,6 +173,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\bootstrap.rtl.css" />
     <Content Include="css\bootstrap.rtl.min.css" />
+    <Content Include="ForgotPassword_Page.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
@@ -205,6 +207,13 @@
     </Compile>
     <Compile Include="ControlPanel_Page.aspx.designer.cs">
       <DependentUpon>ControlPanel_Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword_Page.aspx.cs">
+      <DependentUpon>ForgotPassword_Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword_Page.aspx.designer.cs">
+      <DependentUpon>ForgotPassword_Page.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>

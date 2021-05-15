@@ -44,6 +44,10 @@
         <label for="inputPassword">Password</label>
         <asp:TextBox ID="textboxPassword" class="form-control" runat="server"></asp:TextBox>
       </div>
+        <div class="form-group">
+        <label for="inputPassword">E-mail</label>
+        <asp:TextBox ID="textboxEmail" class="form-control" runat="server"></asp:TextBox>
+      </div>
 
         <asp:Button ID="btn_register2" class="btn btn-primary" runat="server" Text="Register" OnClick="btn_register2_Click" />
     </form>

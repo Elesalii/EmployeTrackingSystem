@@ -10,51 +10,33 @@
 namespace EmployeTrackingSystem {
     
     
-    public partial class HomePage {
+    public partial class ForgotPassword_Page {
         
         /// <summary>
-        /// usernametext denetimi.
+        /// txtemail denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox usernametext;
+        protected global::System.Web.UI.WebControls.TextBox txtemail;
         
         /// <summary>
-        /// passwordtext denetimi.
+        /// btn_recover_pw denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passwordtext;
+        protected global::System.Web.UI.WebControls.Button btn_recover_pw;
         
         /// <summary>
-        /// btn_login denetimi.
+        /// btn_backto_login denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_login;
-        
-        /// <summary>
-        /// btn_register denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_register;
-        
-        /// <summary>
-        /// btn_to_recovery denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_to_recovery;
+        protected global::System.Web.UI.WebControls.Button btn_backto_login;
     }
 }

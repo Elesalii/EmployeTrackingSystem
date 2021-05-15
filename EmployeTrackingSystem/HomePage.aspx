@@ -30,7 +30,7 @@
 
         <asp:Button ID="btn_login" runat="server" Text="Sign in" OnClick="btn_login_Click" class="btn btn-lg btn-primary btn-block" />
         <asp:Button ID="btn_register" runat="server" Text="Register" class="btn btn-lg btn-secondary btn-block" OnClick="btn_register_Click" />
-
+        <asp:Button ID="btn_to_recovery" runat="server" Text="Forgot Password?" class="btn btn-lg btn-secondary btn-block" OnClick="btn_to_recovery_Click"/>
          
     </form>
   </body>
