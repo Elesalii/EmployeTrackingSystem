@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head runat="server">
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -40,16 +40,22 @@
     <div class="container-fluid" style="width: 60%">
       <div class="row">
         <div class="col-12 text-center">
-          <button class="btn btn-primary">Start Scanning Process</button>
+            
           <button class="btn btn-danger">Stop Scanning Process</button>
         </div>
                  <form id="employeedata" runat="server">
                 <div class="col-8">
-                  <span>Last Scanned Id : </span>
-                    <asp:TextBox ID="textboxlastscannedid" runat="server"></asp:TextBox>
+                  <span>Last Scanned Card id : </span>
+                    <asp:TextBox ID="textboxlastscannedid" runat="server" OnLoad="textboxlastscannedid_Load"></asp:TextBox>
                   <br />
-                  <span>Last Scanned Name :</span>
-                  <asp:TextBox ID="textbox_empname" runat="server"></asp:TextBox>
+                  <span>Last Scanned Name:</span>
+                  <asp:TextBox ID="textbox_empname" runat="server" AutoPostBack="true" OnTextChanged="textbox_empname_TextChanged"></asp:TextBox>
+                  <br />
+                    <span>Last Scanned Surname :</span>
+                  <asp:TextBox ID="textbox_empsurname" runat="server"></asp:TextBox>
+                  <br />
+                    <span>Last Scanned Employee ID :</span>
+                  <asp:TextBox ID="textbox_empID" runat="server"></asp:TextBox>
                   <br />
                 </div>
         <div class="col-4 text-center">
@@ -59,8 +65,9 @@
         </div>
         <div class="col-12 text-center">
           <a href="ManagementPanel_Page.aspx" class="btn btn-secondary"
-            >Management Panel</a
-          >
+            >Management Panel</a>
+            <asp:Button ID="btn_scan_process" runat="server" Text="Start Scanning Process" class="btn btn-primary" OnClick="btn_scan_process_Click" />
+          
         </div>
         
     

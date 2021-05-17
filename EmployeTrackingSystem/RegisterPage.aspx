@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head runat="server">
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -20,9 +20,18 @@
 
   <body>
     <form runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
       <button type="submit" class="btn btn-lg btn-success">Listen Port</button>
-        <asp:Label ID="LabelMasterAutho" runat="server"></asp:Label>
-      <br />
+        <asp:UpdatePanel ID="update_scanned_id" runat="server">
+            <ContentTemplate>
+                
+            </ContentTemplate>
+            
+        </asp:UpdatePanel>
+        <asp:Label ID="LabelMasterAutho" runat="server" OnLoad="LabelMasterAutho_Load"></asp:Label>
+        <br />
+      
 
       <div class="form-group">
         <label for="inputId">Id</label>

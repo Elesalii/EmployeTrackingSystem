@@ -13,6 +13,24 @@ namespace EmployeTrackingSystem {
     public partial class RegisterPage {
         
         /// <summary>
+        /// ScriptManager1 denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// update_scanned_id denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel update_scanned_id;
+        
+        /// <summary>
         /// LabelMasterAutho denetimi.
         /// </summary>
         /// <remarks>

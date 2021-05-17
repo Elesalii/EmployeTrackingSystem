@@ -174,7 +174,7 @@
     <Content Include="css\bootstrap.rtl.css" />
     <Content Include="css\bootstrap.rtl.min.css" />
     <Content Include="ForgotPassword_Page.aspx" />
-    <Content Include="HomePage.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.esm.js" />
@@ -215,12 +215,12 @@
     <Compile Include="ForgotPassword_Page.aspx.designer.cs">
       <DependentUpon>ForgotPassword_Page.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HomePage.aspx.cs">
-      <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HomePage.aspx.designer.cs">
-      <DependentUpon>HomePage.aspx</DependentUpon>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManagementPanel_Page.aspx.cs">
       <DependentUpon>ManagementPanel_Page.aspx</DependentUpon>

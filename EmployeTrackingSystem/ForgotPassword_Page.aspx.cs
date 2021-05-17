@@ -22,7 +22,7 @@ namespace EmployeTrackingSystem
 
         protected void btn_backto_login_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomePage.aspx");
+            Response.Redirect("Index.aspx");
         }
 
         protected void btn_recover_pw_Click(object sender, EventArgs e)

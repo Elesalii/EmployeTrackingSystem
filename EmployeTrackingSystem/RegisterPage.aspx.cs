@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Web.UI.HtmlControls;
 
 namespace EmployeTrackingSystem
 {
@@ -48,6 +49,15 @@ namespace EmployeTrackingSystem
         protected void btn_register2_Click(object sender, EventArgs e)
         {
             patronRegister(); 
+        }
+
+        protected void LabelMasterAutho_Load(object sender, EventArgs e)
+        {
+            //HtmlMeta metatag_master = new HtmlMeta();
+            //metatag_master.HttpEquiv = "refresh";
+            //metatag_master.Content = "10";
+            //Page.Header.Controls.Add(metatag_master);
+            ////Response.AppendHeader("refresh", "5");
         }
     }
 }
