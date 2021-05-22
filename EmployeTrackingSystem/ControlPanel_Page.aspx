@@ -37,7 +37,7 @@
   </head>
 
   <body>
-    <div class="container-fluid" style="width: 60%">
+    <div class="container">
       <div class="row">
         <div class="col-12 text-center">
             
@@ -82,18 +82,24 @@
               </asp:GridView>
         </div>
         
-             </form>
+            
       </div>
     </div>
     <div class="container-fluid" style="width: 40%">
       <div class="row">
         <div class="col-12" style="border: 1px solid black; height: 100vh">
-          <p>ss</p>
-          <p>sss</p>
-          <p>ddd</p>
+           <asp:GridView ID="gvRecords" runat="server" AutoGenerateColumns="false">  
+                <Columns>               
+                    <asp:BoundField DataField="emp_name" HeaderText ="Employee name" />
+                    <asp:BoundField DataField="emp_surname" HeaderText ="Employee surname" />
+                    <asp:BoundField DataField="snap_time" HeaderText ="ScanTime" />
+                </Columns>
+              </asp:GridView>
+
         </div>
       </div>
     </div>
+      </form>
   </body>
   <script>
     $(document).ready(function () {

@@ -26,6 +26,8 @@ namespace EmployeTrackingSystem
             LastScannedName();
             LastScannedSurname();
             LastScannedEmpid();
+            Last_ten_records();
+            Response.AppendHeader("refresh", "5");
         }
         //try cathlere tekrar bakılacak -- eğer textchanged eventindeki uyarı yeterse kaldırılabilir--
         protected void Lastscannedid()
@@ -39,6 +41,7 @@ namespace EmployeTrackingSystem
                 textboxlastscannedid.Text = dr["scannedid"].ToString();
                 dr.Close();
                 conn.Close();
+                //Response.AppendHeader("refresh", "5");
             }
             catch
             {
@@ -66,7 +69,7 @@ namespace EmployeTrackingSystem
             }
             catch
             {
-                Response.Write("<script>alert('Card ID did not match')</script>");
+                Response.Write("unmatched ID");
             }
         }
         protected void LastScannedSurname()
@@ -91,7 +94,7 @@ namespace EmployeTrackingSystem
             }
             catch
             {
-                Response.Write("<script>alert('Card ID did not match')</script>");
+                Response.Write(".");
             }
         }
         protected void LastScannedEmpid()
@@ -115,19 +118,19 @@ namespace EmployeTrackingSystem
             }
             catch
             {
-                Response.Write("<script>alert('Card ID did not match')</script>");
+                Response.Write(".");
             }
         }
 
         protected void textbox_empname_TextChanged(object sender, EventArgs e)
         {
-            conn.Open();
-            string addEmpquery = "INSERT INTO logs_employee(emp_id,emp_name,emp_surname,emp_card_id) VALUES('" + textbox_empID.Text.ToString() + "', '" + textbox_empname.Text.ToString() + "', '" + textbox_empsurname.Text.ToString() + "', '" + textboxlastscannedid.Text.ToString() + "')";
-            MySqlCommand add_Empcommand = new MySqlCommand(addEmpquery, conn);
-            add_Empcommand.ExecuteNonQuery();
-            Response.Write("<script>alert('Inserted Successfully')</script>");
-            conn.Close();
-            Response.Write("<script>alert('TextChanged')</script>");
+            //conn.Open();
+            //string addEmpquery = "INSERT INTO logs_employee(emp_id,emp_name,emp_surname,emp_card_id) VALUES('" + textbox_empID.Text.ToString() + "', '" + textbox_empname.Text.ToString() + "', '" + textbox_empsurname.Text.ToString() + "', '" + textboxlastscannedid.Text.ToString() + "')";
+            //MySqlCommand add_Empcommand = new MySqlCommand(addEmpquery, conn);
+            //add_Empcommand.ExecuteNonQuery();
+            //Response.Write("<script>alert('Inserted Successfully')</script>");
+            //conn.Close();
+            //Response.Write("<script>alert('TextChanged')</script>");
         }
 
         protected void btn_scan_process_Click(object sender, EventArgs e)
@@ -141,6 +144,20 @@ namespace EmployeTrackingSystem
             //metatag.HttpEquiv = "refresh";
             //metatag.Content = "10";
             //Page.Header.Controls.Add(metatag);
+        }
+        protected void Last_ten_records()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
+            conn.Open();
+            MySqlDataAdapter da_records = new MySqlDataAdapter("SELECT * FROM logs_employee ORDER BY ID DESC LIMIT 10;", conn);
+            DataTable mydatatable_records = new DataTable();
+            da_records.Fill(mydatatable_records);
+            gvRecords.DataSource = mydatatable_records;
+            gvRecords.DataBind();
+            conn.Close();
         }
     }
 }

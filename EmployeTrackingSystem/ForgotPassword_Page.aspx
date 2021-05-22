@@ -27,7 +27,7 @@
                       </div>
                       <div class="form-group">
                         <asp:Button ID="btn_recover_pw" runat="server" Text="Recover password" class="btn btn-lg btn-primary btn-block" OnClick="btn_recover_pw_Click" />
-                        <asp:Button ID="btn_backto_login" runat="server" Text="Back To Login" class="btn btn-lg btn-primary btn-block" OnClick="btn_backto_login_Click" />
+                        <asp:Button ID="btn_backto_login" runat="server" Text="Back To Login" class="btn btn-lg btn-secondary btn-block" OnClick="btn_backto_login_Click" />
                       </div>
                       <input type="hidden" class="hide" name="token" id="token" value=""> 
                     </form>
