@@ -71,12 +71,12 @@
           </thead>
           <tbody>
             <tr>
-              <td>Row 1 Data 1</td>
-              <td>Row 1 Data 2</td>
+              <td>Ahmet</td>
+              <td>Mehmet</td>
             </tr>
             <tr>
-              <td>Row 2 Data 1</td>
-              <td>Row 2 Data 2</td>
+              <td>Sedat</td>
+              <td>Peker</td>
             </tr>
           </tbody>
         </table>

@@ -15,19 +15,26 @@ namespace EmployeTrackingSystem
         MySqlConnection conn = new MySqlConnection(@"server=127.0.0.1;user id=alieles;database=ets; password=mymind3278.");
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn.Open();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM employees", conn);
-            DataTable mydatatable = new DataTable();
-            da.Fill(mydatatable);
-            gvEmployees.DataSource = mydatatable;
-            gvEmployees.DataBind();
-            conn.Close();
-            Lastscannedid();
-            LastScannedName();
-            LastScannedSurname();
-            LastScannedEmpid();
-            Last_ten_records();
-            Response.AppendHeader("refresh", "5");
+            if (Session["username"] != null)
+            {
+                conn.Open();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM employees", conn);
+                DataTable mydatatable = new DataTable();
+                da.Fill(mydatatable);
+                gvEmployees.DataSource = mydatatable;
+                gvEmployees.DataBind();
+                conn.Close();
+                Lastscannedid();
+                LastScannedName();
+                LastScannedSurname();
+                LastScannedEmpid();
+                Last_ten_records();
+                Response.AppendHeader("refresh", "5");
+            }
+            else
+            {
+                Response.Redirect("Index.aspx");
+            }
         }
         //try cathlere tekrar bakılacak -- eğer textchanged eventindeki uyarı yeterse kaldırılabilir--
         protected void Lastscannedid()
@@ -158,6 +165,12 @@ namespace EmployeTrackingSystem
             gvRecords.DataSource = mydatatable_records;
             gvRecords.DataBind();
             conn.Close();
+        }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
 }

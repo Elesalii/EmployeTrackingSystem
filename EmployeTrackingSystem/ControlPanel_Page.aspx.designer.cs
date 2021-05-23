@@ -13,13 +13,13 @@ namespace EmployeTrackingSystem {
     public partial class ControlPanel_Page {
         
         /// <summary>
-        /// employeedata denetimi.
+        /// btn_logout denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm employeedata;
+        protected global::System.Web.UI.WebControls.Button btn_logout;
         
         /// <summary>
         /// textboxlastscannedid denetimi.
@@ -56,15 +56,6 @@ namespace EmployeTrackingSystem {
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textbox_empID;
-        
-        /// <summary>
-        /// btn_scan_process denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_scan_process;
         
         /// <summary>
         /// gvEmployees denetimi.

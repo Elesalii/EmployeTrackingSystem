@@ -32,13 +32,15 @@ namespace EmployeTrackingSystem
             MySqlDataReader dr = cmd.ExecuteReader();
             if(dr.Read())
             {
+                Session["username"] = usernametext.Text;
                 Response.Redirect("ControlPanel_Page.aspx");
             }
             else
             {
                 // Response.Write("Failed to Login, try again!");
                 //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-                Response.Write("<script>alert('failed to login')</script>");
+                //Response.Write("<script>alert('failed to login')</script>");
+                errorLabel.Visible = true;
             }
         }
 

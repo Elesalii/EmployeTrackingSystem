@@ -13,66 +13,138 @@
 
     <title>ControlPanel</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/ali/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
-    <link href="/ali/signin.css" rel="stylesheet" />
+   <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
     <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css"
-    />
-
-    <script
-      type="text/javascript"
-      charset="utf8"
-      src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"
-    ></script>
   </head>
+  <body class="bg-light">
+      <form runat="server">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ETS</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="ControlPanel_Page.aspx"
+                >Control Panel</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ManagementPanel_Page.aspx"
+                >Management Panel</a
+              >
+            </li>
 
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-            
-          <button class="btn btn-danger">Stop Scanning Process</button>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Operations
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="UpdatePage.aspx">Update Employee</a></li>
+                <li>
+                  <a class="dropdown-item" href="Add-Delete_Page.aspx">Add/Delete Employee</a>
+                </li>
+
+                <li><a class="dropdown-item" href="Add-Delete-Patron_Page.aspx">Add/Delete Patron</a></li>
+              </ul>
+            </li>
+              <li class="nav-item">
+                  <asp:Button ID="btn_logout" runat="server" Text="Log out" class="nav-link btn btn-danger" aria-current="page" OnClick="btn_logout_Click" />
+            </li>
+          </ul>
         </div>
-                 <form id="employeedata" runat="server">
-                <div class="col-8">
-                  <span>Last Scanned Card id : </span>
-                    <asp:TextBox ID="textboxlastscannedid" runat="server" OnLoad="textboxlastscannedid_Load"></asp:TextBox>
-                  <br />
-                  <span>Last Scanned Name:</span>
-                  <asp:TextBox ID="textbox_empname" runat="server" AutoPostBack="true" OnTextChanged="textbox_empname_TextChanged"></asp:TextBox>
-                  <br />
-                    <span>Last Scanned Surname :</span>
-                  <asp:TextBox ID="textbox_empsurname" runat="server"></asp:TextBox>
-                  <br />
-                    <span>Last Scanned Employee ID :</span>
-                  <asp:TextBox ID="textbox_empID" runat="server"></asp:TextBox>
-                  <br />
-                </div>
-        <div class="col-4 text-center">
-          <span>Current Status</span>
-          <br />
-          <span>Connected</span>
-        </div>
-        <div class="col-12 text-center">
-          <a href="ManagementPanel_Page.aspx" class="btn btn-secondary"
-            >Management Panel</a>
-            <asp:Button ID="btn_scan_process" runat="server" Text="Start Scanning Process" class="btn btn-primary" OnClick="btn_scan_process_Click" />
-          
-        </div>
+      </div>
+    </nav>
+    <div class="container" style="margin-top: 80px">
+      <div class="row p-4 card gx-0 shadow">
+        <h1>Last Scanned Employee</h1>
+        <hr />
+        <div class="row">
+          <div class="form-group col-lg-6 mt-2">
+            <label for="exampleInputEmail1">Last Scanned ID</label>
+
+            <asp:TextBox
+              ID="textboxlastscannedid"
+              runat="server"
+              OnLoad="textboxlastscannedid_Load"
+              class="form-control"
+              type="text"
+            ></asp:TextBox>
+          </div>
+          <div class="form-group col-lg-6 mt-2">
+            <label for="textbox_empname">Last Scanned Name</label>
+
+            <asp:TextBox
+              ID="textbox_empname"
+              runat="server"
+              AutoPostBack="true"
+              OnTextChanged="textbox_empname_TextChanged"
+              class="form-control"
+              type="text"
+            ></asp:TextBox>
+          </div>
+          <div class="form-group col-lg-6 mt-2">
+            <label for="exampleInputEmail1">Last Scanend Surname</label>
+             <asp:TextBox
+              ID="textbox_empsurname"
+              runat="server"
+              AutoPostBack="true"           
+              class="form-control"
+              type="text"
+            ></asp:TextBox>
+          </div>
+          <div class="form-group col-lg-6 mt-2">
+            <label for="exampleInputPassword1">Last Scanned Employee ID</label>
+             <asp:TextBox
+              ID="textbox_empID"
+              runat="server"
+              AutoPostBack="true"
+              class="form-control"
+              type="text"
+            ></asp:TextBox>
+          </div>
+          <div class="form-group mt-4">
+            <small id="emailHelp" class="form-text text-muted"
+              >Current Status : Connected</small
+            >
+          </div>
+            </div>
+      </div>
         
-    
-        <div class="col-12">
-          <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="false">  
+      <div class="row mb-4 p-4 card gx-0 shadow mt-4">
+        <h1>Employee List</h1>
+        <hr />
+          
+        <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="false" class="table">  
                 <Columns>
                     <asp:BoundField DataField="empID" HeaderText ="Employee id" />
                     <asp:BoundField DataField="empName" HeaderText ="Employee name" />
@@ -80,31 +152,22 @@
                     <asp:BoundField DataField="CardID" HeaderText ="Card id" />
                 </Columns>
               </asp:GridView>
-        </div>
-        
-            
+       
       </div>
-    </div>
-    <div class="container-fluid" style="width: 40%">
-      <div class="row">
-        <div class="col-12" style="border: 1px solid black; height: 100vh">
-           <asp:GridView ID="gvRecords" runat="server" AutoGenerateColumns="false">  
+      <div class="row mt-4 mb-5 p-4 card gx-0 shadow">
+        <h1>Scan Logs</h1>
+        <hr />
+          <asp:GridView ID="gvRecords" runat="server" AutoGenerateColumns="false" class="table">  
                 <Columns>               
-                    <asp:BoundField DataField="emp_name" HeaderText ="Employee name" />
+                    <asp:BoundField DataField="snap_time" HeaderText ="Scan Time" />
                     <asp:BoundField DataField="emp_surname" HeaderText ="Employee surname" />
-                    <asp:BoundField DataField="snap_time" HeaderText ="ScanTime" />
+                    <asp:BoundField DataField="emp_name" HeaderText ="Employee Name" />
                 </Columns>
               </asp:GridView>
-
-        </div>
+        
       </div>
     </div>
       </form>
   </body>
-  <script>
-    $(document).ready(function () {
-      $("#table_id").DataTable();
-    });
-  </script>
 </html>
 

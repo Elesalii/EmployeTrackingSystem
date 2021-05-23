@@ -11,7 +11,14 @@ namespace EmployeTrackingSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] != null)
+            {
 
+            }
+            else
+            {
+                Response.Redirect("Index.aspx");
+            }
         }
     }
 }
