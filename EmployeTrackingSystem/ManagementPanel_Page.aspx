@@ -35,6 +35,7 @@
   </head>
 
   <body class="text-center">
+      <form runat="server">
     <div class="container">
       <form>
         <div class="form-group row">
@@ -61,35 +62,26 @@
           <a href="#" class="btn btn-success col-sm-2">Filter</a>
         </div>
       </form>
-      <div class="col-sm-12 border mt-5">
-        <table id="table_id" class="display">
-          <thead>
-            <tr>
-              <th>Column 1</th>
-              <th>Column 2</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Ahmet</td>
-              <td>Mehmet</td>
-            </tr>
-            <tr>
-              <td>Sedat</td>
-              <td>Peker</td>
-            </tr>
-          </tbody>
-        </table>
+     <div class="row mb-4 p-4 card gx-0 shadow mt-4">
+        <h1>Employee List</h1>
+        <hr />
+          
+        <asp:GridView ID="gvData" runat="server" AutoGenerateColumns="false" class="table">  
+                <Columns>
+                    <asp:BoundField DataField="emp_id" HeaderText ="Employee id" />
+                    <asp:BoundField DataField="emp_name" HeaderText ="Employee name" />
+                    <asp:BoundField DataField="emp_surname" HeaderText ="Employee surname" />
+                    <asp:BoundField DataField="emp_card_id" HeaderText ="Card id" />
+                    <asp:BoundField DataField="snap_time" HeaderText ="Scan time" />
+                </Columns>
+              </asp:GridView>
+       
       </div>
       <div class="form-group row">
         <a href="UpdatePage.aspx" class="btn btn-secondary col-sm-2 mt-5">Update</a>
       </div>
     </div>
+      </form>
   </body>
-  <script>
-    $(document).ready(function () {
-      $("#table_id").DataTable();
-    });
-  </script>
 </html>
 

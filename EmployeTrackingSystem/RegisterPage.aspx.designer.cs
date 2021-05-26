@@ -13,22 +13,13 @@ namespace EmployeTrackingSystem {
     public partial class RegisterPage {
         
         /// <summary>
-        /// ScriptManager1 denetimi.
+        /// btn_authorize denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// update_scanned_id denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel update_scanned_id;
+        protected global::System.Web.UI.WebControls.Button btn_authorize;
         
         /// <summary>
         /// LabelMasterAutho denetimi.
@@ -40,13 +31,13 @@ namespace EmployeTrackingSystem {
         protected global::System.Web.UI.WebControls.Label LabelMasterAutho;
         
         /// <summary>
-        /// textboxID denetimi.
+        /// authorization_msg denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxID;
+        protected global::System.Web.UI.WebControls.Label authorization_msg;
         
         /// <summary>
         /// textboxPatronID denetimi.

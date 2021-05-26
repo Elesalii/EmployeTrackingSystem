@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Web.UI.HtmlControls;
+using System.Drawing;
 
 namespace EmployeTrackingSystem
 {
@@ -15,7 +16,7 @@ namespace EmployeTrackingSystem
         MySqlConnection conn = new MySqlConnection(@"server=127.0.0.1;user id=alieles;database=ets; password=mymind3278.");
         public void patronRegister()
         {
-            if(LabelMasterAutho.Text == "212")
+            if(LabelMasterAutho.Text == "220")
             {
                 conn.Open();
                 string addquery = "INSERT INTO patron VALUES('"+textboxPatronID.Text.ToString() +"', '"+textboxCardID.Text.ToString() + "', '"+textboxUsername.Text.ToString() +"', '"+textboxPassword.Text.ToString()+"','"+textboxEmail.Text+"')";
@@ -26,7 +27,9 @@ namespace EmployeTrackingSystem
             }
             else
             {
-                Response.Write("<script>alert('MasterCard Authorazition FAILED!')</script>");
+                authorization_msg.Text = "CAN NOT REGISTER!";
+                authorization_msg.ForeColor = Color.Red;
+                authorization_msg.Visible = true;
             }
 
 
@@ -38,12 +41,25 @@ namespace EmployeTrackingSystem
             MySqlDataReader drVerifier = verifycommand.ExecuteReader();
             drVerifier.Read();
             LabelMasterAutho.Text = drVerifier["scannedid"].ToString();
+            LabelMasterAutho.Visible = false;
             drVerifier.Close();
             conn.Close();
+            if(LabelMasterAutho.Text == "220")
+            {
+                authorization_msg.Text = "AUTHORIZATION COMPLETE";
+                authorization_msg.ForeColor = Color.Green;
+                authorization_msg.Visible = true;
+            }
+            else
+            {
+                authorization_msg.Text = "AUTHORIZATION FAILED";
+                authorization_msg.ForeColor = Color.Red;
+                authorization_msg.Visible = true;
+            }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            MasterCardAutho();
+            
         }
 
         protected void btn_register2_Click(object sender, EventArgs e)
@@ -58,6 +74,11 @@ namespace EmployeTrackingSystem
             //metatag_master.Content = "10";
             //Page.Header.Controls.Add(metatag_master);
             ////Response.AppendHeader("refresh", "5");
+        }
+
+        protected void btn_authorize_Click(object sender, EventArgs e)
+        {
+            MasterCardAutho();
         }
     }
 }

@@ -20,23 +20,16 @@
 
   <body>
     <form runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-      <button type="submit" class="btn btn-lg btn-success">Listen Port</button>
-        <asp:UpdatePanel ID="update_scanned_id" runat="server">
-            <ContentTemplate>
-                
-            </ContentTemplate>
-            
-        </asp:UpdatePanel>
-        <asp:Label ID="LabelMasterAutho" runat="server" OnLoad="LabelMasterAutho_Load"></asp:Label>
+        
+        <asp:Button ID="btn_authorize" runat="server" Text="Authorize MasterCard" class="btn btn-lg btn-success" type="submit" OnClick="btn_authorize_Click" />
+        
+        <asp:Label ID="LabelMasterAutho" runat="server" OnLoad="LabelMasterAutho_Load">...scan master card</asp:Label>
+            <asp:Label ID="authorization_msg" runat="server" ForeColor="Black" Visible="False"></asp:Label>
         <br />
       
 
       <div class="form-group">
-        <label for="inputId">Id</label>
-          <asp:TextBox ID="textboxID" class="form-control" runat="server"></asp:TextBox>
-      </div>
+        &nbsp;</div>
       <div class="form-group">
         <label for="inputPatronId">Patron Id</label>
         <asp:TextBox ID="textboxPatronID" class="form-control" runat="server"></asp:TextBox>
@@ -59,6 +52,8 @@
       </div>
 
         <asp:Button ID="btn_register2" class="btn btn-primary" runat="server" Text="Register" OnClick="btn_register2_Click" />
+        <p>
+            &nbsp;</p>
     </form>
   </body>
 </html>
