@@ -38,20 +38,16 @@
       </head>
 
       <body>
+          <form runat="server">
+              
         <div class="container border" style="display: block">
           <h2>Add / Delete</h2>
-          <div class="form-group row">
-            <label for="inputId" class="col-sm-2 col-form-label">Id</label>
-            <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputId" />
-            </div>
-          </div>
           <div class="form-group row">
             <label for="inputEmployeeId" class="col-sm-2 col-form-label"
               >Employee Id</label
             >
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputEmployeeId" />
+                <asp:TextBox ID="textbox_emp_id" runat="server" class="form-control" CssClass="was-validated" ></asp:TextBox>
             </div>
           </div>
           <div class="form-group row">
@@ -59,7 +55,7 @@
               >Employee Name</label
             >
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputEmployeeName" />
+                <asp:TextBox ID="textbox_emp_name" runat="server" class="form-control" CssClass="was-validated"></asp:TextBox>
             </div>
           </div>
           <div class="form-group row">
@@ -67,26 +63,32 @@
               >Employee Surname</label
             >
             <div class="col-sm-3">
-              <input
-                type="text"
-                class="form-control"
-                id="inputEmployeeSurname"
-              />
+              <asp:TextBox ID="textbox_emp_surname" runat="server" class="form-control" CssClass="was-validated"></asp:TextBox>
             </div>
           </div>
+            <asp:ScriptManager ID="ScriptManager_card" runat="server">
+          </asp:ScriptManager>
+          <asp:UpdatePanel ID="UpdatePanel_card" runat="server">
+              <ContentTemplate>
+                  <asp:Timer ID="Timer_for_card" runat="server" Interval="3000" OnTick="Timer_for_card_Tick"></asp:Timer>
           <div class="form-group row">
             <label for="inputCardId" class="col-sm-2 col-form-label"
               >Card Id</label
             >
             <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputCardId" />
+              <asp:TextBox ID="textbox_card_id" runat="server" class="form-control" CssClass="was-validated" Height="30px" MaxLength="30"></asp:TextBox>
             </div>
           </div>
+                  
           <div class="form-group row pl-2">
-            <a href="#" class="btn btn-primary col-sm-2"> Add</a>
-            <a href="#" class="btn btn-danger col-sm-2 ml-2"> Delete</a>
+              <asp:Button ID="btn_add_emp" runat="server" Text="Add" class="btn btn-primary col-sm-2" OnClick="btn_add_emp_Click"/>
+              <asp:Button ID="btn_delete_emp" runat="server" Text="Delete" class="btn btn-secondary col-sm-2" OnClick="btn_delete_emp_Click"/>
           </div>
-        </div>
+                  <asp:Label ID="label_query_status" runat="server" Font-Bold="True" Font-Italic="True" Visible="False"></asp:Label>
+                   </ContentTemplate>
+          </asp:UpdatePanel>
+        </div>              
+        </form>
       </body>
     </html>
   </body>

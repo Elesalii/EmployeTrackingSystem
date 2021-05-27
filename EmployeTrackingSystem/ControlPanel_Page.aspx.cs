@@ -29,7 +29,7 @@ namespace EmployeTrackingSystem
                 LastScannedSurname();
                 LastScannedEmpid();
                 Last_ten_records();
-                Response.AppendHeader("refresh", "5");
+                //Response.AppendHeader("refresh", "5");
             }
             else
             {
@@ -171,6 +171,22 @@ namespace EmployeTrackingSystem
         {
             Session["username"] = null;
             Response.Redirect("Index.aspx");
+        }
+
+        protected void Timer_for_div_Tick(object sender, EventArgs e)
+        {
+            conn.Open();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM employees", conn);
+            DataTable mydatatable = new DataTable();
+            da.Fill(mydatatable);
+            gvEmployees.DataSource = mydatatable;
+            gvEmployees.DataBind();
+            conn.Close();
+            Lastscannedid();
+            LastScannedName();
+            LastScannedSurname();
+            LastScannedEmpid();
+            Last_ten_records();
         }
     }
 }

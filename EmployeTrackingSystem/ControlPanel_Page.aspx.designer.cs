@@ -22,6 +22,33 @@ namespace EmployeTrackingSystem {
         protected global::System.Web.UI.WebControls.Button btn_logout;
         
         /// <summary>
+        /// ScriptManager_div denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager_div;
+        
+        /// <summary>
+        /// UpdatePanel_div denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel_div;
+        
+        /// <summary>
+        /// Timer_for_div denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.Timer Timer_for_div;
+        
+        /// <summary>
         /// textboxlastscannedid denetimi.
         /// </summary>
         /// <remarks>

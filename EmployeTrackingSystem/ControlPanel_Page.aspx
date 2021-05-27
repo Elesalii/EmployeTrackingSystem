@@ -27,6 +27,7 @@
   </head>
   <body class="bg-light">
       <form runat="server">
+          
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">ETS</a>
@@ -84,6 +85,12 @@
         </div>
       </div>
     </nav>
+          <asp:ScriptManager ID="ScriptManager_div" runat="server">
+          </asp:ScriptManager>
+          <asp:UpdatePanel ID="UpdatePanel_div" runat="server">
+              <ContentTemplate>
+                  <asp:Timer ID="Timer_for_div" runat="server" Interval="5000" OnTick="Timer_for_div_Tick"></asp:Timer>                 
+
     <div class="container" style="margin-top: 80px">
       <div class="row p-4 card gx-0 shadow">
         <h1>Last Scanned Employee</h1>
@@ -167,6 +174,8 @@
         
       </div>
     </div>
+                  </ContentTemplate>
+          </asp:UpdatePanel>
       </form>
   </body>
 </html>
