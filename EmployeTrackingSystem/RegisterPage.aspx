@@ -22,8 +22,14 @@
     <form runat="server">
         
         <asp:Button ID="btn_authorize" runat="server" Text="Authorize MasterCard" class="btn btn-lg btn-success" type="submit" OnClick="btn_authorize_Click" />
-        
+        <asp:ScriptManager ID="ScriptManager_card" runat="server">
+          </asp:ScriptManager>
+          <asp:UpdatePanel ID="UpdatePanel_card" runat="server">
+              <ContentTemplate>
+                  <asp:Timer ID="Timer_for_master" runat="server" Interval="3000" OnTick="Timer_for_master_Tick"></asp:Timer>
         <asp:Label ID="LabelMasterAutho" runat="server" OnLoad="LabelMasterAutho_Load">...scan master card</asp:Label>
+                  </ContentTemplate>
+              </asp:UpdatePanel>
             <asp:Label ID="authorization_msg" runat="server" ForeColor="Black" Visible="False"></asp:Label>
         <br />
       

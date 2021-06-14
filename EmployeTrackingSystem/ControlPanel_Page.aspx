@@ -16,13 +16,13 @@
    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
+     <%-- integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"--%>
     />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
+     <%-- integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"--%>
     ></script>
   </head>
   <body class="bg-light">
@@ -167,8 +167,8 @@
           <asp:GridView ID="gvRecords" runat="server" AutoGenerateColumns="false" class="table">  
                 <Columns>               
                     <asp:BoundField DataField="snap_time" HeaderText ="Scan Time" />
-                    <asp:BoundField DataField="emp_surname" HeaderText ="Employee surname" />
                     <asp:BoundField DataField="emp_name" HeaderText ="Employee Name" />
+                    <asp:BoundField DataField="emp_surname" HeaderText ="Employee Surname" />
                 </Columns>
               </asp:GridView>
         

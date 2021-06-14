@@ -36,14 +36,14 @@ namespace EmployeTrackingSystem
         }
         public void MasterCardAutho()
         {
-            conn.Open();
-            MySqlCommand verifycommand = new MySqlCommand("SELECT * FROM logs ORDER BY id DESC LIMIT 1", conn);
-            MySqlDataReader drVerifier = verifycommand.ExecuteReader();
-            drVerifier.Read();
-            LabelMasterAutho.Text = drVerifier["scannedid"].ToString();
-            LabelMasterAutho.Visible = false;
-            drVerifier.Close();
-            conn.Close();
+            //conn.Open();
+            //MySqlCommand verifycommand = new MySqlCommand("SELECT * FROM logs ORDER BY id DESC LIMIT 1", conn);
+            //MySqlDataReader drVerifier = verifycommand.ExecuteReader();
+            //drVerifier.Read();
+            //LabelMasterAutho.Text = drVerifier["scannedid"].ToString();
+            //LabelMasterAutho.Visible = false;
+            //drVerifier.Close();
+            //conn.Close();
             if(LabelMasterAutho.Text == "220")
             {
                 authorization_msg.Text = "AUTHORIZATION COMPLETE";
@@ -79,6 +79,28 @@ namespace EmployeTrackingSystem
         protected void btn_authorize_Click(object sender, EventArgs e)
         {
             MasterCardAutho();
+        }
+
+        protected void Timer_for_master_Tick(object sender, EventArgs e)
+        {
+            Lastscannedid_card_master();
+        }
+        protected void Lastscannedid_card_master()
+        {
+            try
+            {
+                conn.Open();
+                MySqlCommand cmd_mastercard_id = new MySqlCommand("SELECT * FROM logs ORDER BY id DESC LIMIT 1;", conn);
+                MySqlDataReader dr_mastercard = cmd_mastercard_id.ExecuteReader();
+                dr_mastercard.Read();
+                LabelMasterAutho.Text = dr_mastercard["scannedid"].ToString();
+                dr_mastercard.Close();
+                conn.Close();
+            }
+            catch
+            {
+                Response.Write("<script>alert('No card scan detected')</script>");
+            }
         }
     }
 }
