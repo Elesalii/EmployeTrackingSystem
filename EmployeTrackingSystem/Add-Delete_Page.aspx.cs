@@ -17,7 +17,7 @@ namespace EmployeTrackingSystem
         {
             if (Session["username"] != null)
             {
-                Label_session.Text = "Welcome " + Session["username"].ToString();
+                Label_session_add_delete_page.Text = "Welcome " + Session["username"].ToString();
             }
             else
             {
@@ -46,27 +46,6 @@ namespace EmployeTrackingSystem
             }
         }
 
-        protected void btn_add_emp_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                string addquery_emp = "INSERT INTO employees VALUES('" + textbox_emp_id.Text.ToString() + "', '" + textbox_emp_name.Text.ToString() + "', '" + textbox_emp_surname.Text.ToString() + "', '" + textbox_card_id.Text.ToString() + "')";
-                MySqlCommand addcommand_emp = new MySqlCommand(addquery_emp, conn);
-                addcommand_emp.ExecuteNonQuery();
-                label_query_status.ForeColor = Color.Green;
-                label_query_status.Text = "EMPLOYEE INSERTED SUCCESSFULLY";
-                label_query_status.Visible = true;
-                conn.Close();
-            }
-            catch
-            {
-                label_query_status.ForeColor = Color.Red;
-                label_query_status.Text = "EMPLOYEE INSERTATION PROBLEM";
-                label_query_status.Visible = true;
-            }
-        }
-
         protected void btn_delete_emp_Click(object sender, EventArgs e)
         {
             try
@@ -92,6 +71,28 @@ namespace EmployeTrackingSystem
             Session["username"] = null;
             Response.Redirect("Index.aspx");
         }
+
+        protected void btn_add_emp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                string addquery_emp = "INSERT INTO employees VALUES('" + textbox_emp_id.Text.ToString() + "', '" + textbox_emp_name.Text.ToString() + "', '" + textbox_emp_surname.Text.ToString() + "', '" + textbox_card_id.Text.ToString() + "')";
+                MySqlCommand addcommand_emp = new MySqlCommand(addquery_emp, conn);
+                addcommand_emp.ExecuteNonQuery();
+                label_query_status.ForeColor = Color.Green;
+                label_query_status.Text = "EMPLOYEE INSERTED SUCCESSFULLY";
+                label_query_status.Visible = true;
+                conn.Close();
+            }
+            catch
+            {
+                label_query_status.ForeColor = Color.Red;
+                label_query_status.Text = "EMPLOYEE INSERTATION PROBLEM";
+                label_query_status.Visible = true;
+            }
+        }
+
     }
     
 }

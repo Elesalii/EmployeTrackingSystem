@@ -62,6 +62,7 @@
         <asp:Button ID="btn_register2" class="btn btn-primary" runat="server" Text="Register" OnClick="btn_register2_Click" />
                   </ContentTemplate>
               </asp:UpdatePanel>
+        <asp:Button ID="btn_to_index" class="btn btn-secondary" runat="server" Text="Back to Login" OnClick="btn_to_index_Click" />
         <p>
             &nbsp;</p>
     </form>

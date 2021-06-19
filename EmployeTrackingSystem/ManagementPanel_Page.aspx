@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"
 CodeBehind="ManagementPanel_Page.aspx.cs"
-Inherits="EmployeTrackingSystem.ManagementPanel_Page" %>
+Inherits="EmployeTrackingSystem.ManagementPanel_Page" EnableEventValidation="false" %> 
 
 <!DOCTYPE html>
 <html>

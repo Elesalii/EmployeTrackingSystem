@@ -115,5 +115,10 @@ namespace EmployeTrackingSystem
                 Response.Write("<script>alert('No card scan detected')</script>");
             }
         }
+
+        protected void btn_to_index_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
+        }
     }
 }

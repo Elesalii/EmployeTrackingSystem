@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Add-Delete-Patron_Page.aspx.cs" Inherits="EmployeTrackingSystem.Add_Delete_Patron_Page" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Add-Delete-Patron_Page.aspx.cs" Inherits="EmployeTrackingSystem.Add_Delete_Patron_Page" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,82 +9,205 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Add/Delete Patron</title>
+    <title>Add/Delete Employees</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"
+  ></script>
   </head>
 
-  <body class="text-center">
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="utf-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+  
 
-        <title>Signin Template for Bootstrap</title>
+      <body class="bg-light">
+        <form runat="server">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">ETS</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="ControlPanel_Page.aspx"
+                      >Control Panel</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="ManagementPanel_Page.aspx"
+                      >Management Panel</a
+                    >
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle active"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Operations
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li>
+                        <a class="dropdown-item" href="UpdatePage.aspx"
+                          >Update Employee</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="Add-Delete_Page.aspx"
+                          >Add/Delete Employee</a
+                        >
+                      </li>
+    
+                      <li>
+                        <a class="dropdown-item" href="Add-Delete-Patron_Page.aspx"
+                          >Add/Delete Patron</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <div class="d-flex">
+                  <a
+                    class="nav-link disabled"
+                    href="#"
+                    tabindex="-1"
+                    aria-disabled="true"
+                    style="color: rgba(255, 255, 255, 0.815) !important"
+                    ><asp:Label
+                      ID="Label_session"
+                      runat="server"
+                      Forecolor="White"
+                      BorderColor="#666666"
+                      Font-Italic="True"
+                      Font-Size="Smaller"
+                      Font-Underline="True"
+                    ></asp:Label
+                  ></a>
+    
+                  <asp:Button
+                    ID="btn_logout_add_delete_patron"
+                    runat="server"
+                    Text="Log out"
+                    class="nav-link btn btn-danger"
+                    aria-current="page"
+                    ForeColor="White"
+                    OnClick="btn_logout_add_delete_patron_Click"
+                  />
+                </div>
+              </div>
+            </div>
+          </nav>
 
-        <!-- Bootstrap core CSS -->
-        <link href="/ali/bootstrap.min.css" rel="stylesheet" />
+          <div class="container" style="margin-top: 80px;">
+            <div class="form-group card col-6 mx-auto px-4 justify-content-center shadow">
+              <br>
+            <h2>Add / Delete</h2>
+            <hr>
+            <div class="form-group row mb-3 mt-2">
+              <label for="inputEmployeeId" class="col-sm-3 col-form-label"
+                >Patron ID</label
+              >
+              <div class="col-sm-9">
+                <asp:TextBox
+                  ID="textbox_patron_id"
+                  runat="server"
+                  class="form-control"
+                ></asp:TextBox>
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="inputEmployeeName" class="col-sm-3 col-form-label"
+                >Username</label
+              >
+              <div class="col-sm-9">
+                <asp:TextBox
+                  ID="textbox_username"
+                  runat="server"
+                  class="form-control"
+                ></asp:TextBox>
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+              <label for="inputEmployeeSurname" class="col-sm-3 col-form-label"
+                >Password</label
+              >
+              <div class="col-sm-9">
+                <asp:TextBox
+                  ID="textbox_password"
+                  runat="server"
+                  class="form-control"
+                ></asp:TextBox>
+              </div>
+            </div>
+            <div class="form-group row mb-3">
+                  <label for="inputCardId" class="col-sm-3 col-form-label"
+                    >E-mail</label
+                  >
+                  <div class="col-sm-9">
+                    <asp:TextBox
+                      ID="textbox_email"
+                      runat="server"
+                      class="form-control"
+                      Height="30px"
+                      MaxLength="30"
+                    ></asp:TextBox>
+                  </div>
+                </div>
+            <asp:ScriptManager ID="ScriptManager_patron" runat="server">
+            </asp:ScriptManager>
+            <asp:UpdatePanel ID="UpdatePanel_patron" runat="server">
+              <ContentTemplate>
 
-        <!-- Custom styles for this template -->
-        <link href="/ali/signin.css" rel="stylesheet" />
-      </head>
+                <div class="form-group row mb-3 pl-2 justify-content-center">
+                  <asp:Button
+                    ID="btn_add_emp"
+                    runat="server"
+                    Text="Add"
+                    class="btn btn-primary col-sm-4 mx-1"
+                    OnClick="btn_add_emp_Click"
+                  />
+                  <asp:Button
+                    ID="btn_delete_emp"
+                    runat="server"
+                    Text="Delete"
+                    class="btn btn-danger col-sm-4 mx-1"
+                    OnClick="btn_delete_emp_Click"
+                  />
+                </div>
+                <div class="form-group row mb-3 text-center">
+                  <asp:Label
+                  ID="label_query_status"
+                  runat="server"
+                  Font-Bold="True"
+                  Font-Italic="True"
+                  Visible="False"
+                ></asp:Label>
 
-      <body>
-        <div class="container border" style="display: block">
-          <h2>Add / Delete Patron</h2>
-          <div class="form-group row">
-            <label for="inputId" class="col-sm-2 col-form-label">Id</label>
-            <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputId" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPatronId" class="col-sm-2 col-form-label"
-              >Patron Id</label
-            >
-            <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputPatronId" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputCardId" class="col-sm-2 col-form-label"
-              >CardId</label
-            >
-            <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputCardId" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputUsername" class="col-sm-2 col-form-label"
-              >Username</label
-            >
-            <div class="col-sm-3">
-              <input type="text" class="form-control" id="inputUsername" />
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label"
-              >Password</label
-            >
-            <div class="col-sm-3">
-              <input type="password" class="form-control" id="inputPassword" />
-            </div>
-          </div>
-          <div class="form-group row pl-2">
-            <a href="#" class="btn btn-primary col-sm-2"> Add</a>
-            <a href="#" class="btn btn-danger col-sm-2 ml-2"> Delete</a>
+                </div>
+                
+              </ContentTemplate>
+            </asp:UpdatePanel>
           </div>
         </div>
+        </form>
       </body>
     </html>
-  </body>
-</html>
-
