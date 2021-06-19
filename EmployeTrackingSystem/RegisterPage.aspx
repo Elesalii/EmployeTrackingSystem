@@ -21,16 +21,17 @@
   <body>
     <form runat="server">
         
-        <asp:Button ID="btn_authorize" runat="server" Text="Authorize MasterCard" class="btn btn-lg btn-success" type="submit" OnClick="btn_authorize_Click" />
+        <asp:Button ID="btn_authorize" runat="server" Text="Scan Master Card" class="btn btn-lg btn-success" type="submit" OnClick="btn_authorize_Click" />
         <asp:ScriptManager ID="ScriptManager_card" runat="server">
           </asp:ScriptManager>
           <asp:UpdatePanel ID="UpdatePanel_card" runat="server">
               <ContentTemplate>
-                  <asp:Timer ID="Timer_for_master" runat="server" Interval="3000" OnTick="Timer_for_master_Tick"></asp:Timer>
-        <asp:Label ID="LabelMasterAutho" runat="server" OnLoad="LabelMasterAutho_Load">...scan master card</asp:Label>
+                  <asp:Timer ID="Timer_for_master" runat="server" Interval="2000" OnTick="Timer_for_master_Tick"></asp:Timer>
+        <asp:Label ID="LabelMasterAutho" runat="server" OnLoad="LabelMasterAutho_Load"></asp:Label>
+                  <asp:Label ID="authorization_msg" runat="server" ForeColor="Black" Visible="False"></asp:Label>
                   </ContentTemplate>
               </asp:UpdatePanel>
-            <asp:Label ID="authorization_msg" runat="server" ForeColor="Black" Visible="False"></asp:Label>
+            
         <br />
       
 
@@ -40,10 +41,10 @@
         <label for="inputPatronId">Patron Id</label>
         <asp:TextBox ID="textboxPatronID" class="form-control" runat="server"></asp:TextBox>
       </div>
-      <div class="form-group">
+      <%--<div class="form-group">
         <label for="inputCardId">CardId</label>
         <asp:TextBox ID="textboxCardID" class="form-control" runat="server"></asp:TextBox>
-      </div>
+      </div>--%>
       <div class="form-group">
         <label for="inputUsername">Username</label>
         <asp:TextBox ID="textboxUsername" class="form-control" runat="server"></asp:TextBox>
@@ -56,8 +57,11 @@
         <label for="inputPassword">E-mail</label>
         <asp:TextBox ID="textboxEmail" class="form-control" runat="server"></asp:TextBox>
       </div>
-
+        <asp:UpdatePanel ID="UpdatePanel_btn" runat="server">
+              <ContentTemplate>
         <asp:Button ID="btn_register2" class="btn btn-primary" runat="server" Text="Register" OnClick="btn_register2_Click" />
+                  </ContentTemplate>
+              </asp:UpdatePanel>
         <p>
             &nbsp;</p>
     </form>

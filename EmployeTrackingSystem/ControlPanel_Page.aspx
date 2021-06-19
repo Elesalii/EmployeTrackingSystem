@@ -94,6 +94,7 @@
     <div class="container" style="margin-top: 80px">
       <div class="row p-4 card gx-0 shadow">
         <h1>Last Scanned Employee</h1>
+          <asp:Label ID="Label_session" runat="server" Forecolor="Green" BorderColor="#666666" Font-Italic="True" Font-Size="Smaller" Font-Underline="True"></asp:Label>
         <hr />
         <div class="row">
           <div class="form-group col-lg-6 mt-2">

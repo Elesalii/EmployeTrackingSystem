@@ -76,15 +76,6 @@ namespace EmployeTrackingSystem {
         protected global::System.Web.UI.WebControls.TextBox textboxPatronID;
         
         /// <summary>
-        /// textboxCardID denetimi.
-        /// </summary>
-        /// <remarks>
-        /// Otomatik üretilmiş alan.
-        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox textboxCardID;
-        
-        /// <summary>
         /// textboxUsername denetimi.
         /// </summary>
         /// <remarks>
@@ -110,6 +101,15 @@ namespace EmployeTrackingSystem {
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox textboxEmail;
+        
+        /// <summary>
+        /// UpdatePanel_btn denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel_btn;
         
         /// <summary>
         /// btn_register2 denetimi.

@@ -17,6 +17,7 @@ namespace EmployeTrackingSystem
         {
             if (Session["username"] != null)
             {
+                Label_session.Text = "Welcome " + Session["username"].ToString();
                 conn.Open();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM employees", conn);
                 DataTable mydatatable = new DataTable();
@@ -28,8 +29,7 @@ namespace EmployeTrackingSystem
                 LastScannedName();
                 LastScannedSurname();
                 LastScannedEmpid();
-                Last_ten_records();
-                //Response.AppendHeader("refresh", "5");
+                Last_ten_records();               
             }
             else
             {

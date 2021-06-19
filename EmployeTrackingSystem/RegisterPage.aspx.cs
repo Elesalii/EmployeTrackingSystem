@@ -18,12 +18,23 @@ namespace EmployeTrackingSystem
         {
             if(LabelMasterAutho.Text == "220")
             {
-                conn.Open();
-                string addquery = "INSERT INTO patron VALUES('"+textboxPatronID.Text.ToString() +"', '"+textboxCardID.Text.ToString() + "', '"+textboxUsername.Text.ToString() +"', '"+textboxPassword.Text.ToString()+"','"+textboxEmail.Text+"')";
-                MySqlCommand addcommand = new MySqlCommand(addquery, conn);
-                addcommand.ExecuteNonQuery();
-                Response.Write("<script>alert('Inserted Successfully')</script>");
-                conn.Close();
+                if (textboxPatronID.Text != null && textboxUsername.Text != null && textboxPassword.Text != null && textboxEmail.Text != null)
+                {
+                    conn.Open();
+                    string addquery = "INSERT INTO patron VALUES('" + textboxPatronID.Text.ToString() + "', '" + textboxUsername.Text.ToString() + "', '" + textboxPassword.Text.ToString() + "','" + textboxEmail.Text + "')";
+                    MySqlCommand addcommand = new MySqlCommand(addquery, conn);
+                    addcommand.ExecuteNonQuery();
+                    authorization_msg.Text = "INSERTED SUCCESFULLY";
+                    authorization_msg.ForeColor = Color.Green;
+                    authorization_msg.Visible = true;
+                    conn.Close();
+                }
+                else
+                {
+                    authorization_msg.Text = "CAN NOT REGISTER! Wrong information";
+                    authorization_msg.ForeColor = Color.Red;
+                    authorization_msg.Visible = true;
+                }
             }
             else
             {
@@ -78,12 +89,13 @@ namespace EmployeTrackingSystem
 
         protected void btn_authorize_Click(object sender, EventArgs e)
         {
-            MasterCardAutho();
+            //MasterCardAutho();
         }
 
         protected void Timer_for_master_Tick(object sender, EventArgs e)
         {
             Lastscannedid_card_master();
+            MasterCardAutho();
         }
         protected void Lastscannedid_card_master()
         {
@@ -94,6 +106,7 @@ namespace EmployeTrackingSystem
                 MySqlDataReader dr_mastercard = cmd_mastercard_id.ExecuteReader();
                 dr_mastercard.Read();
                 LabelMasterAutho.Text = dr_mastercard["scannedid"].ToString();
+                LabelMasterAutho.Visible = false;
                 dr_mastercard.Close();
                 conn.Close();
             }

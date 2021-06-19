@@ -20,14 +20,7 @@ namespace EmployeTrackingSystem
         {
             if (Session["username"] != null)
             {
-                //conn.Open();
-                //MySqlDataAdapter da_data = new MySqlDataAdapter("SELECT * FROM employees", conn);
-                //DataTable mydatatable_data = new DataTable();
-                //da_data.Fill(mydatatable_data);
-                //gvData.DataSource = mydatatable_data;
-                //gvData.DataBind();
-                //conn.Close();
-                
+               
             }
             
             else
@@ -89,5 +82,16 @@ namespace EmployeTrackingSystem
             }
         }
 
+        protected void btn_logout_mp_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("Index.aspx");
+
+        }
+        //protected void Timer_for_mp_Tick(object sender, EventArgs e)
+        //{
+        //    demo();
+        //    demo2();
+        //}
     }
 }

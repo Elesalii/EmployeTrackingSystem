@@ -37,9 +37,6 @@ namespace EmployeTrackingSystem
             }
             else
             {
-                // Response.Write("Failed to Login, try again!");
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-                //Response.Write("<script>alert('failed to login')</script>");
                 errorLabel.Visible = true;
             }
         }
