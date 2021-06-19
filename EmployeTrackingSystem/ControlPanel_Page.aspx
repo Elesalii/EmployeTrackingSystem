@@ -35,29 +35,21 @@
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="ControlPanel_Page.aspx"
-                >Control Panel</a
-              >
+              <a class="nav-link active" aria-current="page" href="ControlPanel_Page.aspx">Control Panel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ManagementPanel_Page.aspx"
-                >Management Panel</a
-              >
+              <a class="nav-link" href="ManagementPanel_Page.aspx">Management Panel</a>
             </li>
-
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -78,10 +70,20 @@
                 <li><a class="dropdown-item" href="Add-Delete-Patron_Page.aspx">Add/Delete Patron</a></li>
               </ul>
             </li>
-              <li class="nav-item">
-                  <asp:Button ID="btn_logout" runat="server" Text="Log out" class="nav-link btn btn-danger" aria-current="page" OnClick="btn_logout_Click" />
-            </li>
+           
           </ul>
+          <form class="d-flex">
+              <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              style="color: rgba(255, 255, 255, 0.815) !important"
+              ><asp:Label ID="Label_session" runat="server" Forecolor="White" BorderColor="#666666" Font-Italic="True" Font-Size="Smaller" Font-Underline="True"></asp:Label></a
+            >
+              
+            <asp:Button ID="btn_logout" runat="server" ForeColor="White" Text="Log out" class="nav-link btn btn-danger" aria-current="page" OnClick="btn_logout_Click" />
+          </form>
         </div>
       </div>
     </nav>
@@ -93,8 +95,7 @@
 
     <div class="container" style="margin-top: 80px">
       <div class="row p-4 card gx-0 shadow">
-        <h1>Last Scanned Employee</h1>
-          <asp:Label ID="Label_session" runat="server" Forecolor="Green" BorderColor="#666666" Font-Italic="True" Font-Size="Smaller" Font-Underline="True"></asp:Label>
+        <h2>Last Scanned Employee</h2>
         <hr />
         <div class="row">
           <div class="form-group col-lg-6 mt-2">
@@ -149,7 +150,7 @@
       </div>
         
       <div class="row mb-4 p-4 card gx-0 shadow mt-4">
-        <h1>Employee List</h1>
+        <h2>Employee List</h2>
         <hr />
           
         <asp:GridView ID="gvEmployees" runat="server" AutoGenerateColumns="false" class="table">  
@@ -163,7 +164,7 @@
        
       </div>
       <div class="row mt-4 mb-5 p-4 card gx-0 shadow">
-        <h1>Scan Logs</h1>
+        <h2>Scan Logs</h2>
         <hr />
           <asp:GridView ID="gvRecords" runat="server" AutoGenerateColumns="false" class="table">  
                 <Columns>               

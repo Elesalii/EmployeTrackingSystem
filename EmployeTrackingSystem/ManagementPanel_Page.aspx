@@ -32,29 +32,21 @@ Inherits="EmployeTrackingSystem.ManagementPanel_Page" %>
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="ControlPanel_Page.aspx"
-                >Control Panel</a
-              >
+              <a class="nav-link" aria-current="page" href="ControlPanel_Page.aspx">Control Panel</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="ManagementPanel_Page.aspx"
-                >Management Panel</a
-              >
+              <a class="nav-link active" href="ManagementPanel_Page.aspx">Management Panel</a>
             </li>
-
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -67,49 +59,40 @@ Inherits="EmployeTrackingSystem.ManagementPanel_Page" %>
                 Operations
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="UpdatePage.aspx">Update Employee</a></li>
                 <li>
-                  <a class="dropdown-item" href="UpdatePage.aspx"
-                    >Update Employee</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="Add-Delete_Page.aspx"
-                    >Add/Delete Employee</a
-                  >
+                  <a class="dropdown-item" href="Add-Delete_Page.aspx">Add/Delete Employee</a>
                 </li>
 
-                <li>
-                  <a class="dropdown-item" href="Add-Delete-Patron_Page.aspx"
-                    >Add/Delete Patron</a
-                  >
-                </li>
+                <li><a class="dropdown-item" href="Add-Delete-Patron_Page.aspx">Add/Delete Patron</a></li>
               </ul>
             </li>
-            <li class="nav-item">
-              <asp:Button
-                ID="btn_logout_mp"
-                runat="server"
-                Text="Log out"
-                class="nav-link btn btn-danger"
-                aria-current="page"
-                OnClick="btn_logout_mp_Click"
-              />
-            </li>
+           
           </ul>
+          <form class="d-flex">
+              <a
+              class="nav-link disabled"
+              href="#"
+              tabindex="-1"
+              aria-disabled="true"
+              style="color: rgba(255, 255, 255, 0.815) !important"
+              ><asp:Label ID="Label_session" runat="server" Forecolor="White" BorderColor="#666666" Font-Italic="True" Font-Size="Smaller" Font-Underline="True"></asp:Label></a
+            >
+              
+            <asp:Button ID="btn_logout_mp" runat="server" ForeColor="White" Text="Log out" class="nav-link btn btn-danger" aria-current="page" OnClick="btn_logout_mp_Click" />
+          </form>
         </div>
       </div>
     </nav>   
-            <div class="card container" style="margin-top: 80px;">
-              <div class="card-header">
-                <h3 class="card-title">Searhable DataTable</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
+            <div class="container" style="margin-top: 80px;">
+              
                 <div
                   id="example1_wrapper"
                   class="dataTables_wrapper dt-bootstrap4"
                 >
                   <div class="row p-4 card gx-0 shadow">
+                    <h2>Employee List</h2>
+        <hr />
                     <div class="col-sm-12">
                       <table
                         id="example1"
@@ -172,7 +155,9 @@ Inherits="EmployeTrackingSystem.ManagementPanel_Page" %>
                       </table>
                     </div>
                   </div>
-                  <div class="row p-4 card gx-0 shadow mt-2">
+                  <div class="row p-4 card gx-0 shadow mt-4">
+                    <h2>Logs</h2>
+                    <hr />
                     <div class="col-sm-12">
                       <table
                         id="example2"
@@ -246,9 +231,8 @@ Inherits="EmployeTrackingSystem.ManagementPanel_Page" %>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- /.card-body -->
-            </div>
+             
+          </div>
             <!-- /.card -->
         
 

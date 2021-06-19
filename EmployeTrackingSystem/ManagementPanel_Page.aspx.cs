@@ -20,7 +20,7 @@ namespace EmployeTrackingSystem
         {
             if (Session["username"] != null)
             {
-               
+                Label_session.Text = "Welcome " + Session["username"].ToString();
             }
             
             else

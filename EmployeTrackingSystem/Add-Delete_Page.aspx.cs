@@ -17,7 +17,7 @@ namespace EmployeTrackingSystem
         {
             if (Session["username"] != null)
             {
-
+                Label_session.Text = "Welcome " + Session["username"].ToString();
             }
             else
             {
@@ -86,6 +86,11 @@ namespace EmployeTrackingSystem
                 label_query_status.Text = "EMPLOYEE DELETION PROBLEM";
                 label_query_status.Visible = true;
             }
+        }
+        protected void btn_logout_add_delete_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("Index.aspx");
         }
     }
     

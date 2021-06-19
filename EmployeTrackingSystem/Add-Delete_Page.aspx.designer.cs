@@ -13,6 +13,24 @@ namespace EmployeTrackingSystem {
     public partial class Add_Delete_Page {
         
         /// <summary>
+        /// Label_session denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_session;
+        
+        /// <summary>
+        /// btn_logout_add_delete denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik üretilmiş alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_logout_add_delete;
+        
+        /// <summary>
         /// textbox_emp_id denetimi.
         /// </summary>
         /// <remarks>
