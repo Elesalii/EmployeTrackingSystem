@@ -91,7 +91,7 @@
           </asp:ScriptManager>
           <asp:UpdatePanel ID="UpdatePanel_div" runat="server">
               <ContentTemplate>
-                  <asp:Timer ID="Timer_for_div" runat="server" Interval="5000" OnTick="Timer_for_div_Tick"></asp:Timer>                 
+                  <asp:Timer ID="Timer_for_div" runat="server" Interval="1000" OnTick="Timer_for_div_Tick"></asp:Timer>                 
 
     <div class="container" style="margin-top: 80px">
       <div class="row p-4 card gx-0 shadow">

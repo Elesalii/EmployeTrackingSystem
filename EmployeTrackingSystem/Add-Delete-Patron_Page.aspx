@@ -179,18 +179,18 @@
 
                 <div class="form-group row mb-3 pl-2 justify-content-center">
                   <asp:Button
-                    ID="btn_add_emp"
+                    ID="btn_add_patron"
                     runat="server"
                     Text="Add"
                     class="btn btn-primary col-sm-4 mx-1"
-                    OnClick="btn_add_emp_Click"
+                    OnClick="btn_add_patron_Click"
                   />
                   <asp:Button
-                    ID="btn_delete_emp"
+                    ID="btn_delete_patron"
                     runat="server"
                     Text="Delete"
                     class="btn btn-danger col-sm-4 mx-1"
-                    OnClick="btn_delete_emp_Click"
+                    OnClick="btn_delete_patron_Click"
                   />
                 </div>
                 <div class="form-group row mb-3 text-center">

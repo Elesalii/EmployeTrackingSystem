@@ -168,7 +168,7 @@ EnableEventValidation="false" %>
                 <asp:Timer
                   ID="Timer_for_card"
                   runat="server"
-                  Interval="3000"
+                  Interval="2000"
                   OnTick="Timer_for_card_Tick"
                 ></asp:Timer>
                 <div class="form-group row mb-3">

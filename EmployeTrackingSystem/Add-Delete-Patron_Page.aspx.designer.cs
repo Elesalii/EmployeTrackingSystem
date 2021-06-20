@@ -85,22 +85,22 @@ namespace EmployeTrackingSystem {
         protected global::System.Web.UI.UpdatePanel UpdatePanel_patron;
         
         /// <summary>
-        /// btn_add_emp denetimi.
+        /// btn_add_patron denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add_emp;
+        protected global::System.Web.UI.WebControls.Button btn_add_patron;
         
         /// <summary>
-        /// btn_delete_emp denetimi.
+        /// btn_delete_patron denetimi.
         /// </summary>
         /// <remarks>
         /// Otomatik üretilmiş alan.
         /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_delete_emp;
+        protected global::System.Web.UI.WebControls.Button btn_delete_patron;
         
         /// <summary>
         /// label_query_status denetimi.

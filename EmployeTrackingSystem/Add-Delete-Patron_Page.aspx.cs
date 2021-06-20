@@ -17,7 +17,7 @@ namespace EmployeTrackingSystem
         {
             if (Session["username"] != null)
             {
-
+                Label_session.Text = "Welcome " + Session["username"].ToString();
             }
             else
             {
@@ -31,7 +31,7 @@ namespace EmployeTrackingSystem
             Response.Redirect("Index.aspx");
         }
 
-        protected void btn_add_emp_Click(object sender, EventArgs e)
+        protected void btn_add_patron_Click(object sender, EventArgs e)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace EmployeTrackingSystem
             }
         }
 
-        protected void btn_delete_emp_Click(object sender, EventArgs e)
+        protected void btn_delete_patron_Click(object sender, EventArgs e)
         {
             try
             {
